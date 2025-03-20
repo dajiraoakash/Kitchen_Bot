@@ -41,7 +41,10 @@ def split_on_cuisine(text):
         cuisines.append(temp_cuisine.strip())
     return cuisines
 #streamlit
-st.title(' Kitchenbot')
+st.title(' HomeChef\'s Delight')
+# Hero Section with Image
+st.image('kitchen-hero.jpg', caption='Create mouth-watering dishes from the comfort of your home with just the ingredients you have.')
+
 selected_vegetables = st.multiselect("Select the vegetables you have:", vegetable_options)
 
 if selected_vegetables:
@@ -104,3 +107,6 @@ if selected_vegetables:
             substitution_chain = substitution_prompt | llm | output_parser
             substitutions = substitution_chain.invoke({'cuisine': selected_cuisine})
             st.write(substitutions)
+
+# Footer
+st.write('© 2025 HomeChef\'s Delight. All rights reserved.')
